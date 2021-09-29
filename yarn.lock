@@ -2,22 +2,11 @@
 # yarn lockfile v1
 
 
-"@aiflow/mast@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@aiflow/mast/-/mast-1.0.2.tgz#a1d4949204ecf3dbbbaf73e624d69045f04f9041"
-  integrity sha512-nW8qg8HVb9rgB9Uj6Gmesrqoy7Sbq5ENIsfXMWJx/VuCTfwX7IyYcw8T5cYmUMfPvz6af+SB5UGV/dx+hA4llA==
+"@aiflow/mast@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@aiflow/mast/-/mast-1.0.10.tgz#6ea14bbc768cd5423173d5b848ec730b7bb2837d"
+  integrity sha512-2Bj9jkxI0qdzIpbrUkiFQbpk6Fwa+Tp8cSHTI++ddY8ljjCqE1T6dJF3mTS5WYKnR9JkiVNFBJnliDxKPZbH+g==
   dependencies:
-    "@aiflow/mast" "1.0.2"
-    "@types/shortid" "^0.0.29"
-    lodash "^4.17.21"
-    shortid "^2.2.16"
-
-"@aiflow/mast@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@aiflow/mast/-/mast-1.0.3.tgz#4e276654d62621a69211ecc2d696d2e8afad87d2"
-  integrity sha512-ZzK0rWXFSXWk3MGNTs8+Yf51OYtMUQIH3oWZ7icPQYcoyAJPDchtKLN1K4xUOsUAxVWIRMVBc+1CVPpHvQSHhA==
-  dependencies:
-    "@aiflow/mast" "1.0.2"
     "@types/shortid" "^0.0.29"
     lodash "^4.17.21"
     shortid "^2.2.16"

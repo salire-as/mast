@@ -1,9 +1,9 @@
 {
   "name": "@aiflow/mast",
-  "version": "1.0.5",
+  "version": "1.0.12",
   "description": "Mongo filter builder with low-level conditional AST",
-  "main": "dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/Salire-AiFlow/mast",
   "repository": {
     "url": "https://github.com/Salire-AiFlow/mast"
@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@aiflow/mast": "1.0.4",
+    "@aiflow/mast": "^1.0.10",
     "@types/shortid": "^0.0.29",
     "lodash": "^4.17.21",
     "shortid": "^2.2.16"
