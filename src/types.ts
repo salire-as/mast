@@ -1,7 +1,7 @@
 import { CompoundCondition } from "./compoundCondition";
 import { FieldCondition } from "./fieldCondition";
 
-export type FieldOperator = "eq" | "in" | "gt" | "gte" | "lt" | "lte" | "all";
+export type FieldOperator = "eq" | "ne" | "in" | "gt" | "gte" | "lt" | "lte" | "all";
 
 export type CompoundOperator = "or" | "and" | "not" | "nor";
 

@@ -2,6 +2,7 @@ import { CompoundOperator, FieldOperator } from "./types";
 
 export const FIELD_OPERATORS: readonly FieldOperator[] = [
   "eq",
+  "ne",
   "in",
   "gt",
   "gte",
