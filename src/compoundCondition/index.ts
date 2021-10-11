@@ -3,7 +3,6 @@ import { FieldCondition } from "../fieldCondition";
 import { CompoundConditionValue, CompoundConditionValues, CompoundOperator, LeanCompoundCondition } from "../types";
 import { isCompoundCondition, isFieldCondition } from "../utils/conditionals";
 import shortid from "shortid";
-
 export class CompoundCondition {
   public id: string;
   public operator: CompoundOperator;
@@ -46,6 +45,24 @@ export class CompoundCondition {
       value: this.value.map((field) => field.toAst())
     }) as LeanCompoundCondition;
   }
+
+  public toQueryExpression(isParent = true) : any {
+    const expression = {
+      [this.mongoOperator]: this.value.map((field) => {
+        if(field instanceof CompoundCondition){
+          return this.toQueryExpression(false)
+        }
+        else return field.toQueryExpression();
+      })
+    }
+
+    if(isParent){
+      return {
+        $expr: expression
+      }
+    }
+    else return expression
+  } 
 
   public toQuery(): Record<string, any> {
     return Object.assign(

@@ -1,7 +1,7 @@
 {
   "name": "@aiflow/mast",
-  "version": "1.0.13",
-  "description": "Mongo filter builder with low-level conditional AST",
+  "version": "1.0.15",
+  "description": "Mongo query builder with low-level conditional AST",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "homepage": "https://github.com/Salire-AiFlow/mast",

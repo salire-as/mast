@@ -1,6 +1,7 @@
 import { FieldCondition } from "."
 
 const field = "name"
+const mongoField = "$name"
 const operator = "eq"
 const mongoOperator = "$eq"
 const value = "Vemund Eldegard"
@@ -19,4 +20,12 @@ test('Field Condition to Mongo Query', () => {
   expect(query).toHaveProperty(field)
   expect(query[field]).toHaveProperty(mongoOperator)
   expect(query[field][mongoOperator]).toBe(value)
+})
+
+test('Field Condition to Mongo Query Expression', () => {
+  const query = condition.toQueryExpression()
+  expect(query).toHaveProperty(mongoOperator)
+  expect(query[mongoOperator]).toBeInstanceOf(Array)
+  expect(query[mongoOperator]).toHaveLength(2)
+  expect(query[mongoOperator][0]).toBe(mongoField)
 })

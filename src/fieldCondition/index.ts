@@ -26,6 +26,12 @@ export class FieldCondition {
     };
   }
 
+  toQueryExpression() {
+    return {
+      [this.mongoOperator]: [`$${this.field}`, this.value]
+    }
+  }
+
   toAst(): LeanFieldCondition {
     return omit(this, ["mongoOperator", "toQuery"]) as LeanFieldCondition;
   }

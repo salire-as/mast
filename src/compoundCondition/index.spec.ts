@@ -33,6 +33,16 @@ test('Output to Mongo Query', () => {
   expect(query[mongoOperator]).toBeInstanceOf(Array)
 })
 
+test('Output to Mongo Query Expression', () => {
+  const query = condition.toQueryExpression()
+  
+  expect(query.$expr).toBeInstanceOf(Object)
+  expect(query.$expr.$and).toBeInstanceOf(Array)
+  expect(query.$expr.$and).toHaveLength(1)
+  expect(query.$expr.$and[0].$eq).toBeInstanceOf(Array)
+  expect(query.$expr.$and[0].$eq).toHaveLength(2)
+})
+
 test('Remove a field', () => {
   const fieldId = condition.value[0].id
 
@@ -47,4 +57,16 @@ test('Add multiple fields', () => {
   ])
 
   expect(condition.value).toHaveLength(2)
+})
+
+test('Output multiple fields to Mongo Query Expression', () => {
+  const query = condition.toQueryExpression()
+  
+  expect(query.$expr).toBeInstanceOf(Object)
+  expect(query.$expr.$and).toBeInstanceOf(Array)
+  expect(query.$expr.$and).toHaveLength(2)
+  expect(query.$expr.$and[0].$eq).toBeInstanceOf(Array)
+  expect(query.$expr.$and[0].$eq).toHaveLength(2)
+  expect(query.$expr.$and[1].$in).toBeInstanceOf(Array)
+  expect(query.$expr.$and[1].$in).toHaveLength(2)
 })
